@@ -1,12 +1,13 @@
 # Strongly regular graphs with parameters (400, 168, 68, 72)
 
-Graphs, code and a short note (`note/srg400.pdf`) for the results below (Dylan Plummer, 24 November 2026).
+Graphs, code and a short note (`note/srg400.pdf`) for the results below (Dylan Plummer, 24 November 2026; updated 25 November 2026).
 
 ## Results
 
 | parameters | status in Brouwer's table (checked 24 Nov 2026) | here |
 |---|---|---|
-| srg(400, 168, 68, 72) and complement (400, 231, 134, 132) | open (`?`, "pg(14,11,6)?") | about 6.7149 · 10^121 pairwise non-isomorphic graphs from one tiling (exact count in the note) |
+| srg(400, 168, 68, 72) and complement (400, 231, 134, 132) | open (`?`, "pg(14,11,6)?") | about 5.3720 · 10^122 pairwise non-isomorphic graphs from twelve tilings (exact count in the note) |
+| srg(400, 171, 74, 72) and complement (400, 228, 128, 132) | known (Kovaľ) | the same number, by a bijection with the degree-168 family |
 
 - **Construction.**
   - The complement B of the Hoffman–Singleton graph splits into 35 edge-disjoint copies of T(5): three base blocks
@@ -46,6 +47,35 @@ Graphs, code and a short note (`note/srg400.pdf`) for the results below (Dylan P
   - Swap at point 0: |Aut| = 1, 4,958,208 four-cliques.
   - Both have clique number 10.
 
+## Twelve covers and the degree-171 companion (25 Nov 2026)
+
+- **Covers.**
+  - For the same translation group C5 × C5 there are exactly 80 decompositions of B into 35 copies of T(5), in
+    twelve isomorphism classes. Two independent searches agree.
+  - Cover 0 is the original. Four covers have group C5 × D10 and eight have (C5 × C5) ⋊ C4.
+  - Base blocks are in `covers/representatives.json`.
+- **Companion.**
+  - Each cover has exactly one set P of five tiles partitioning the 50 points.
+  - Keep X on P and use −X on the other 30 tiles. In each fiber, add the two K4s on which the character of the
+    P-tile is constant.
+  - The result is srg(400,171,74,72) (note, Proposition 5.1). The map is intrinsic and reversible, so it is a
+    bijection on isomorphism classes that preserves automorphism groups.
+- **Count.**
+  - Exactly 8N ≈ 5.3720 · 10^122 classes at each degree, where N ≈ 6.7149 · 10^121 is the original count.
+  - Each cover with group of order 50 gives N, and each with group of order 100 gives N/2.
+  - The eleven new covers contribute 7N. `covers/counts.json` has the per-cover Burnside data.
+- **Kovaľ's graphs.**
+  - Brouwer's table credits the 171 row to Kovaľ.
+  - His two published graphs ([preprint](https://doi.org/10.5281/zenodo.23296158),
+    [srg-open-cases](https://tonykoval.github.io/srg-open-cases/)) have 3,740 and 21,660 zero-sum four-row sets of
+    A + I. Every member here has 700, so neither is in the family.
+- **Cliques.**
+  - Every member has clique number at most 10 at degree 168.
+  - At degree 171 the bound is 15, or 12 on ten covers, so there is no 20-clique (no OA(20,9) geometry). This is a
+    companion computation.
+- **Independent check.** `covers/independent_covers.py` rebuilds all twelve covers from their base blocks, classifies
+  them with nauty, finds P, and tests random members at both degrees, including the recovery of the 700 planes.
+
 ## Other parameters
 
 The lemma reaches several open rows up to 1300 vertices arithmetically. Each needs a tiling of an existing base by
@@ -71,6 +101,10 @@ by switching, (616,300,152,140). Its separate translation orbits are valid, but 
 found yet. See `lift/scan_targets.out` and `family/TRANSFERS.txt`.
 
 ## Files
+
+- `covers/`: the census of the twelve covers (`census_check.py` is the independent census and needs no earlier
+  code), 48 exported graphs (`covers/graphs/cover_NN_400_{168,171}.g6`), per-cover counts, clique bounds, the
+  companion's `RESULTS.txt`, and our `independent_covers.py`. Kovaľ's graphs are not included.
 
 - `data/starters.txt`: the three base blocks. `data/brouwer_table_snapshot.csv`: the table snapshot used by the
   scans.

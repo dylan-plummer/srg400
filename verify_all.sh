@@ -12,7 +12,10 @@ echo "== lift: general lemma on random decorations and signs, with controls (Fan
 (cd lift && $PY -B general_lift.py)
 echo "== family: fibre-recovery certificate, cover group, clique bound; 32 sign variants; catalogue samples"
 (cd family && $PY -B structure.py && $PY -B family.py && $PY -B verify_examples.py && $PY -B check_catalogue.py)
+echo "== covers: the twelve covers, nauty classification, both degrees, recovery (independent check)"
+(cd covers && $PY -B independent_covers.py)
 echo "all checks passed"
 # Longer runs (not executed here): family/symmetric_census.py (14,656 classes), family/full_count.py (exact
 # Burnside count), family/run_full_audit.py (all 14,656 graphs on all pairs), audit/count_ti.py (888 sign-free
-# translation-invariant classes), lift/scan_targets.py (target rows), lift/signing.py (F = 2 signing searches).
+# translation-invariant classes), lift/scan_targets.py (target rows), lift/signing.py (F = 2 signing searches),
+# covers/census_check.py (independent census of the 80 covers), covers/audit_graphs.py (all 48 cover graphs).

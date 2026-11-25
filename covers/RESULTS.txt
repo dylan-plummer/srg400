@@ -1,0 +1,220 @@
+Twelve Hoffman–Singleton covers and a reversible construction on 400 vertices
+25 November 2026
+
+1. Results
+
+For the fixed simultaneous translation group C5 x C5 on the biaffine
+Hoffman–Singleton graph, there are exactly 80 labeled decompositions of
+its complement B into triangular graphs T(5). Under arbitrary isomorphism
+there are twelve classes. Number 0 recovers the srg400 paper. Classes 1
+through 11 are additional. These are counts for this prescribed translation
+action. Other decompositions of B may exist.
+
+Each of the twelve covers yields two graph families, one with parameters
+(400,168,68,72) and one with parameters (400,171,74,72). We give a bijection
+between their ordinary isomorphism classes which preserves the entire
+automorphism group. It is defined intrinsically on the graphs and works for
+every decoration of every cover in the catalogue. Summing over the twelve
+disjoint families gives the following exact count at EACH degree:
+
+537195051237479909964899209409491776731060695457053423785131185583243508729871442136897196083746851518086068258927017984000
+
+The eleven new covers alone contribute, at each degree,
+
+470045669832794921219286808233305304639678108524921745811989787385338070138637511869785046573943327714316810772321140736000.
+
+Every family member at degree 171 differs from both archived Kovaľ examples.
+Those have respectively 3,740 and 21,660 vanishing four-row sums of their
+binary closed-neighborhood matrices. Our number is 700 throughout. The
+two archived examples have full group orders 3,840 and 5,760. The three
+archived graph6 files checked include a canonical copy of the second graph.
+The degree-168 row was realized by the earlier srg400 construction. The
+degree-171 row is credited to Kovaľ in Brouwer's table. This is a family
+and transfer result on those two rows.
+
+2. Three ten-tuples suffice
+
+Label the fifty points by 25s+5x+y, for s in {0,1} and x,y in F5.
+The Hoffman–Singleton graph has edges within a fixed (s,x) at y-differences
++/-1 on sheet 0 and +/-2 on sheet 1. A point (0,x,y) is adjacent to
+(1,u,v) when v-y=-3(u-x)^2. Take the complement B.
+
+A ten-tuple lists base points in the lexicographic order of the ten edges
+of K5 on 0,...,4. Two entries represent an edge of the tile exactly when
+their K5 edges meet. For example, cover 10 has starters
+
+     0 15  8 24  6 21 14 12  2 18
+     0 48 49  3  2 45 46  4 47  1
+    25 33 39 43 19 24 48 47  6 13
+
+Simultaneously translate x,y on both sheets. The three orbits have lengths
+5,5,25. Their 35 tiles partition all 1,050 edges of B. In covers 10 and 11
+thirty of the 35 supports are independent ten-sets in the Hoffman–Singleton
+graph. The other five induce fifteen edges each. In the original cover
+exactly 25 supports induced three edges, five induced five edges and five
+induced fifteen. The contrast can be seen before signing a single edge.
+
+For a tile let D be an oriented vertex-edge incidence matrix of K5 and put
+X=2I-D^t D. Its nonzero off-diagonal entries are precisely the tile edges.
+It has eigenvalues 2 and -3, of multiplicities 6 and 4. Replace each base
+point p by F2^3. Assign its seven nontrivial characters bijectively to the
+seven tiles containing p. Each assigned character may have an arbitrary
+sign, independently at every incident point-tile flag. For pq in tile T,
+join (p,x) and (q,y) when chi_pT(x)chi_qT(y)=X[p,q]. Fibers are independent.
+On fiber constants the adjacency is 4B. On the characters assigned to a
+tile it acts as 4X, up to conjugation by signs. These subspaces exhaust
+all 400 dimensions. The resulting degree and restricted eigenvalues are
+168,8,-12, giving lambda=68 and mu=72. This lift and the initial cover
+are from the earlier srg400 work, which gives credit to Kovaľ's search
+ledger for the base, slab and signed T(5) framework.
+
+3. The second degree
+
+Every cover has a unique collection P of five tiles whose ten-point
+supports partition the base. This was checked by exact cover rooted at
+the first uncovered point for all twelve, independently also on the graphs
+reconstructed from graph6. Keep X on these tiles and replace X by -X on
+the thirty other tiles. In the fiber of p, use its unique tile in P to
+split its eight vertices by that character into two K4s. A change to the
+sign of the character interchanges the two halves and gives the same edges.
+
+The constant block becomes 4B+3I, of eigenvalues 171,11,-9. The internal
+degree-three adjacency acts by 3 on the distinguished character and by -1
+on each other nonconstant character. Thus the remaining blocks are
+4X+3I (tiles in P) and -4X-I (all other tiles). Each has roots 11 and -9.
+This proves A^2=99I+2A+72J, hence parameters (400,171,74,72). Equivalently,
+complement each external eight-by-eight block belonging to the thirty tiles
+and add the internal cliques. Reversing both operations recovers degree 168.
+
+4. Why different covers give different ordinary graphs
+
+For degree 168 take binary rows of A, and for degree 171 take rows of A+I.
+At each target fiber the dependence on the target coordinate is affine
+linear, with slope given by the appropriate port character. For a row in
+the target fiber itself the closed-neighborhood convention supplies exactly
+the distinguished character at degree 171. At degree 168 its slope is zero.
+
+If four rows sum to zero, consider the base points occurring an odd number
+of times. If there are two or four of them, a target fiber exists where the
+symmetric difference of their port sets has size one or two. A nonzero
+character and a sum of two distinct nonzero characters both have nonzero
+slope. This test uses only the unsigned ports and was run over all 1,225
+pairs and all 230,300 four-subsets on each of the twelve covers, at each
+degree. If the pattern is two plus two, the difference within one fiber
+gives a nonzero constant on the base support of exactly four of its seven
+ports. The 50 times binomial(7,4) such supports are all distinct. Two pairs
+in different fibers therefore cannot cancel. Within one fiber the four-row
+sum vanishes exactly when the four distinct affine points sum to zero.
+
+This gives exactly 14 affine planes per fiber, or 700 in all. Joining
+vertices in these four-sets recovers the fifty fibers as connected
+components. At a fixed fiber, half-blocks give the seven distinct character
+partitions. Join two incident base edges when they use the same partition.
+The resulting components recover the triangular tiles. In particular the
+entire cover and its unique P are intrinsic. The forward and reverse
+operations in section 3 commute with every isomorphism.
+
+5. Enumeration and counts
+
+The simultaneous translation group H has order 25 and acts freely on
+points and on host edges, giving 42 differences. A ten-point support
+cannot be fixed by H. Since the number of tiles is 35, their H-orbit
+lengths are either 5+5+25 or seven occurrences of 5. A short tile has
+a stabilizer of order five which acts faithfully on its five K5 symbols.
+After naming the symbols cyclically, its ten edges occur in two cycles
+(i,i+1) and (i,i+2). Their point images are x+iv and y+iv for a nonzero
+v in F5^2, with arbitrary choices of sheets and relative displacement.
+Each short orbit covers six distinct host differences, with multiplicity
+five in a single tile. Enumeration gives 235 short orbits, 175 difference
+masks, and zero seven-mask partitions. A long tile must hit each of the
+thirty remaining differences exactly once. The possible assignments of its
+ten K5 edges to sheets were exhaustively reduced under the five symbols.
+
+The primary backtracker took 372 problems modulo host symmetries. An
+independent implementation ran all 7,260 problems for all 4,080 remaining
+masks, with no host symmetry reduction, and constructed all 80 labeled
+covers. It found ten labeled covers in each class of group order 50 and
+five in each class of order 100. Canonicalization used both a 260-vertex
+point/tile/star incidence graph and a 1,135-vertex point/tile/edge incidence
+graph. The latter was also reconstructed from ordinary graph6 data and
+checked using bliss, including a randomly permuted input.
+
+For each fiber the seven-bit character value vectors form one of 30 binary
+simplex codes, with 16 possible affine cosets per code. These 480 local
+states classify all assignments up to fiber relabelling. A simultaneous
+sign flip on all ten flags of a tile gives the same graph. No nonzero
+combination of tile flips preserves even one assignment: any such set of
+tiles would meet each point in zero or four flags, and exhaustive testing
+of the even point-tile incidence kernel leaves only the empty set. Thus
+before dividing by cover automorphisms the size is 480^50 / 2^35.
+The earlier Burnside algorithm for the signed action on these local states
+was applied to every conjugacy class of each of the twelve cover groups.
+Its fixed counts and the complete per-cover answers are in counts.json.
+The leading elementary lower bound is independently given by orbit size,
+(4/50+8/100) times 480^50 / 2^35. The count is for all decorations of the
+specified unsigned covers.
+
+There are 117,376 graph classes at each degree admitting the chosen
+translations. Four covers have group C5 x D10, with |D10|=10. The other
+eight have group (C5 x C5) semidirect C4, acting on F5^2 with eigenvalues
+-1 and 2 for a suitable generator. Each such cover yields 32 classes at
+each degree with this full group, for 256 in total. The point orbits of all
+cover groups have sizes 25 and 25. No member is vertex-transitive. The
+translations form the unique Sylow 5-subgroup of each cover group. The
+faithfulness on the cover follows from the free tile action above.
+
+6. Geometry
+
+Within a tile a negative signed triangle excludes its three projected
+points from any clique. Enumerate subsets of the base which are cliques
+in B and avoid every such triple. For degree 168 each lifted clique takes
+at most one point per fiber. Every cover has universal clique bound 10,
+excluding the 15-point lines of a pg(14,11,6).
+
+At degree 171, a clique's points in a fiber lie in the half-space for the
+distinguished tile and in one half-space for every distinct external port
+used by the projection. If j distinct nonzero characters are involved,
+their rank is at least ceil(log2(j+1)). The contribution of the fiber
+is at most 8 / 2^ceil(log2(j+1)). Summing and taking the maximum over
+the same projected-clique enumeration, using the new tile signs, gives
+upper bound 15 on covers 4,5 and 12 on the other ten. In particular none
+of these companions has a 20-clique. The OA(20,9) geometry suggested in
+Brouwer's table requires such cliques. This also rules out subtracting a
+20-clique spread from any of these companions to construct degree 152.
+
+7. Reproduction
+
+The graph on cover 10 with full group of order 100 can be rebuilt with
+the standard library, using this directory's JSON data and the command
+
+    python from_starters.py 10 168 --symmetric > example.g6
+
+Replace 168 by 171 for its companion. graphs/ contains 48 ordinary
+graph6 files, a translation-invariant pair and a maximally symmetric
+pair per cover. All 48 have been rebuilt byte for byte independently
+from the ten-tuples. audit_graphs.py reads graphs without any starter or
+port data, verifies all 79,800 unordered pairs per graph, reconstructs
+the fibers and covers and checks both directions of the companion map.
+It also checks all archived Kovaľ comparison files. See audit.tsv.
+
+With Python from the srg environment, run census_check.py for the second
+complete search (it compiles census_check.cpp using g++ -std=c++20).
+Reproduce the primary census using short_orbits.py, problems.py, then
+compile all_long.cpp with C++20, feed it problems.in and save stdout to
+embeddings.txt. Run catalogue.py, companions.py, equivariant.py, groups.py,
+geometry.py and audit_graphs.py. The primary programs also use the earlier
+work/srg400_construction_20261124 and work/srg400_family_20261124 code.
+The independent census and from_starters.py use no earlier campaign code.
+
+Sources and previous results
+https://aeb.win.tue.nl/graphs/srg/srgtab351-400.html
+../README.md, ../family/COUNT.txt
+Kovaľ's graphs with parameters (400,171,74,72) are published with his preprint
+(https://doi.org/10.5281/zenodo.23296158) and at https://tonykoval.github.io/srg-open-cases/
+(data/srg400_171_74_72_2f5e8c0d6d124206.g6). They are not included here; audit_graphs.py
+compares with them only if a local copy is found under ../../koval/.
+
+Paths in this record: the primary census scripts (catalogue.py and others marked above) import
+the earlier work directories srg400_construction_20261124 and srg400_family_20261124, whose
+contents are in ../seed/ and ../family/ of this repository. The independent census
+(census_check.py) and from_starters.py need no earlier code.

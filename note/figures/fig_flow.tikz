@@ -14,21 +14,25 @@
 \node[box, fill=pA!12] (cnt) at (0,-7.2) {\textbf{Theorem 4.2}: exactly $N\approx6.71\cdot10^{121}$ classes};
 % left column
 \node[box=3.4cm] (hs) at (-4.6,-1.7) {Hoffman--Singleton graph from two copies of $\F_5^2$};
-\node[comp] (cov) at (-4.6,-5.3) {cover group $C_5\times D_{10}$ of order $50$};
+\node[comp] (cov) at (-4.6,-5.3) {cover groups of order $50$ or $100$};
+\node[comp] (cv) at (-4.6,-9.0) {Section 5: eleven more covers (search); companion $\srg(400,171,74,72)$};
 % right column
 \node[comp] (ctl) at (4.6,0) {controls: $(28,12,6,4)$, $(144,66,30,30)$, Clebsch};
 \node[comp] (ti) at (4.6,-5.3) {$14{,}656$ translation-invariant classes (nauty)};
 \node[comp] (clq) at (4.6,-3.6) {clique number $\le10$; no $pg(14,11,6)$};
-\node[box=3.4cm] (oth) at (4.6,-1.7) {Section 5: targets up to $1300$ vertices};
+\node[box=3.4cm] (oth) at (4.6,-1.7) {Section 6: targets up to $1300$ vertices};
 % arrows
 \draw[arr] (lem) -- (til); \draw[arr] (til) -- (thm); \draw[arr] (thm) -- (rec); \draw[arr] (rec) -- (cnt);
 \draw[arr] (hs) -- (til);
+\node[box, fill=pA!12] (c12) at (0,-9.0) {\textbf{Theorem 5.2}: $8N\approx5.37\cdot10^{122}$ classes at each of the degrees $168$ and $171$};
+\draw[arr] (cnt) -- (c12);
+\draw[arr, dashed] (cv) -- (c12);
 \draw[arr, dashed] (lem) -- (ctl);
 \draw[arr] (lem.south east) -- (oth.north west);
 \draw[arr, dashed] (cov) -- (cnt.north west);
 \draw[arr, dashed] (thm.south east) -- (ti.north west);
 \draw[arr, dashed] (thm) -- (clq);
 % legend
-\node[box=2.0cm, inner sep=3pt, font=\scriptsize] at (-1.3,-8.6) {proved in the text};
-\node[comp=3.0cm, inner sep=3pt, font=\scriptsize] at (1.6,-8.6) {rests on a computation};
+\node[box=2.0cm, inner sep=3pt, font=\scriptsize] at (-1.3,-10.8) {proved in the text};
+\node[comp=3.0cm, inner sep=3pt, font=\scriptsize] at (1.6,-10.8) {rests on a computation};
 \end{tikzpicture}

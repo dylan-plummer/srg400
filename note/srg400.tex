@@ -31,14 +31,14 @@
 \begin{document}
 
 \begin{abstract}
-Brouwer's table lists the parameters $(400,168,68,72)$ as open. We construct about $6.7\cdot10^{121}$ pairwise non-isomorphic strongly regular graphs with these parameters and count them exactly. Three base blocks under $C_5\times C_5$ decompose the complement of the Hoffman--Singleton graph into $35$ copies of the triangular graph $T(5)$. Every point is replaced by $\F_2^3$, the seven tiles at a point receive the seven nonzero characters, and each tile is signed by the roots of $A_4$. The proof uses a lifting lemma for edge decompositions into signed graphs with two eigenvalues, and it settles a case that A.~Kova\v{l}'s hyperplane-slab template left open. The fibers can be recovered from the graph, which gives the count. Exactly $14{,}656$ of the graphs come from choices invariant under the $25$ translations, and no graph in the family is the point graph of a partial geometry $pg(14,11,6)$. Up to $1300$ vertices, we list the other open rows that the lemma reaches by arithmetic. A companion note uses the same local rule to construct $\srg(496,231,102,112)$.
+Brouwer's table lists the parameters $(400,168,68,72)$ as open. We construct about $5.4\cdot10^{122}$ pairwise non-isomorphic strongly regular graphs with these parameters and count them exactly. There are twelve decompositions of the complement of the Hoffman--Singleton graph into $35$ copies of the triangular graph $T(5)$ invariant under the same group $C_5\times C_5$, each given by three base blocks. Every point is replaced by $\F_2^3$, the seven tiles at a point receive the seven nonzero characters, and each tile is signed by the roots of $A_4$. The proof uses a lifting lemma for edge decompositions into signed graphs with two eigenvalues, and it settles a case that A.~Kova\v{l}'s hyperplane-slab template left open. The fibers can be recovered from the graph, which gives the count. Reversing the signs on $30$ of the $35$ tiles gives a bijection with the same number of graphs with the known parameters $(400,171,74,72)$. No graph in the family is the point graph of a partial geometry $pg(14,11,6)$. Up to $1300$ vertices, we list the other open rows that the lemma reaches by arithmetic. A companion note uses the same local rule to construct $\srg(496,231,102,112)$.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
 
-Section~\ref{sec:lemma} proves a lifting lemma: a regular graph whose edges are split into signed tiles with two eigenvalues lifts to a strongly regular graph on $F$ times as many vertices, for any Hadamard matrix of order $F$. Section~\ref{sec:construction} applies it to the complement of the Hoffman--Singleton graph with $F=8$. Section~\ref{sec:family} counts the resulting graphs, and Section~\ref{sec:other} lists the other open rows the lemma could reach. Figure~\ref{fig:flow} shows which results rest on computations.
+Section~\ref{sec:lemma} proves a lifting lemma: a regular graph whose edges are split into signed tiles with two eigenvalues lifts to a strongly regular graph on $F$ times as many vertices, for any Hadamard matrix of order $F$. Section~\ref{sec:construction} applies it to the complement of the Hoffman--Singleton graph with $F=8$. Section~\ref{sec:family} counts the resulting graphs, Section~\ref{sec:covers} adds eleven further tilings and a companion family with parameters $(400,171,74,72)$, and Section~\ref{sec:other} lists the other open rows the lemma could reach. Figure~\ref{fig:flow} shows which results rest on computations.
 
 The same local rule gives $\srg(496,231,102,112)$ in a companion note~\cite{P496}. There the tiles are copies of $T(6)$ signed by the roots of $A_5$, and they decompose the complete multipartite graph $K_{15\times4}$. That base graph does not satisfy the hypothesis of Lemma~\ref{lem:lift}, so the lift is made at the level of an equiangular tight frame: one coordinate per part ties together the fibers of a part, and an extra fiber of $16$ vectors at an added point makes the frame tight. This gives a regular two-graph, and a switching gives the graph. Both constructions lead to the same open rows on $616$ vertices (Section~\ref{sec:other}).
 
@@ -171,6 +171,36 @@ Every member has clique number at most $10$. In particular no member is the poin
 
 In the translation-invariant catalogue the clique numbers $8,9,10$ occur $29$, $227$ and $14{,}400$ times. The existence of $pg(14,11,6)$ remains open.
 
+\section{Twelve covers and the parameters \texorpdfstring{$(400,171,74,72)$}{(400,171,74,72)}}\label{sec:covers}
+
+For the fixed group $C_5\times C_5$ of simultaneous translations, a complete search finds exactly $80$ decompositions of $B$ into $35$ copies of $T(5)$, which fall into twelve isomorphism classes. The tiling of Proposition~\ref{prop:tiling} is one of them. Two independent searches, one reduced by the symmetries of $B$ and one not, found the same $80$ decompositions. As an example, cover $10$ has the base blocks
+\[
+\begin{array}{rrrrrrrrrr}
+0&15&8&24&6&21&14&12&2&18\\
+0&48&49&3&2&45&46&4&47&1\\
+25&33&39&43&19&24&48&47&6&13
+\end{array}
+\]
+in the notation of Section~\ref{sec:construction}, and all twelve are listed in \texttt{covers/representatives.json}. Four covers have automorphism group $C_5\times D_{10}$ and eight have $(C_5\times C_5)\rtimes C_4$. In every cover the two orbits on points have length $25$, so no member is vertex-transitive. Theorem~\ref{thm:main} and Proposition~\ref{prop:fibers} hold for every cover, with the same proofs and the same finite check.
+
+\begin{proposition}\label{prop:171}
+Every cover has exactly one set $P$ of five tiles whose supports partition the $50$ points. Keep $X$ on the tiles of $P$ and replace it by $-X$ on the other $30$ tiles. In the fiber of each point $p$, join two vertices when the character of the tile of $P$ at $p$ takes the same value at both. For any characters and signs, the resulting graph is strongly regular with parameters $(400,171,74,72)$.
+\end{proposition}
+
+\begin{proof}
+Each fiber now induces two disjoint copies of $K_4$, with adjacency matrix $\tfrac12(J+\chi\chi^{\top})-I$, where $\chi$ is the character of the tile of $P$. It acts as $3$ on constants and on $\chi$, and as $-1$ on the other six characters. As in the proof of Lemma~\ref{lem:lift}, $A$ acts on the fiber-constant functions as $4A_B+3I$, with eigenvalues $171$, $11$ and $-9$. It acts on $W_T$ as $4X_T+3I$ for $T\in P$ and as $-4X_T-I$ for the other tiles. In both cases the eigenvalues are $11$ and $-9$, because $X_T$ has eigenvalues $2$ and $-3$. A connected regular graph with two other eigenvalues is strongly regular, and $\mu=171-99=72$, $\lambda=72+11-9=74$.
+\end{proof}
+
+The set $P$ is the unique exact cover of the points by tile supports, so it is determined by the cover, and by Proposition~\ref{prop:fibers} the cover is determined by the graph. The rows of $A+I$ at degree $171$ behave like the rows of $A$ at degree $168$: in both cases the zero-sum sets of four rows are exactly the $700$ affine planes inside the fibers, so the same recovery works. Hence the map of Proposition~\ref{prop:171} and its inverse commute with isomorphisms, and it is a bijection between isomorphism classes that preserves automorphism groups.
+
+\begin{theorem}\label{thm:count12}
+The twelve covers give exactly $8N\approx5.3720\cdot10^{122}$ pairwise non-isomorphic strongly regular graphs with parameters $(400,168,68,72)$, and the same number with parameters $(400,171,74,72)$, where $N$ is the number of Theorem~\ref{thm:count}. The eleven new covers contribute $7N$ at each degree.
+\end{theorem}
+
+The fibers and the cover are intrinsic, so different covers give different graphs. For each cover, Burnside's lemma over its group, with the same algorithm as in Theorem~\ref{thm:count}, gives exactly $N$ classes for each cover with group of order $50$ and exactly $N/2$ for each cover with group of order $100$ (\texttt{covers/counts.json}). This agrees with the leading term $(4/50+8/100)\cdot480^{50}/2^{35}=8N$ up to the small contributions of the nontrivial elements. Choices invariant under the translations give $117{,}376$ classes at each degree.
+
+The parameters $(400,171,74,72)$ were first realized by Kova\v{l}~\cite{KovMO}. His two published graphs have $3{,}740$ and $21{,}660$ zero-sum sets of four rows of $A+I$, against $700$ for every member of our family, so neither belongs to it. At degree $168$ every member of every cover has clique number at most $10$, as in Proposition~\ref{prop:fibers}. At degree $171$, a clique meets a fiber in a set on which the characters it uses are constant, which bounds its size. With the same enumeration of projected cliques, every member has clique number at most $15$ (at most $12$ for ten of the covers). In particular no member has a clique of size $20$, as the orthogonal array $OA(20,9)$ suggested in Brouwer's table would require. These clique bounds are companion computations (\texttt{covers/geometry.py}).
+
 \section{Other parameters}\label{sec:other}
 
 Lemma~\ref{lem:lift} needs a strongly regular or complete multipartite base $B$ with $k_B=(F-1)(-\rho\sigma)$, and it produces a strongly regular graph on $Fv$ vertices of degree $c(F-1)+Fk_B/2$. Scanning Brouwer's table (24 November 2026) for open rows with $Fv\le1300$ gives the following targets, up to complements. The column ``tiles'' gives the eigenvalues $\{\rho,\sigma\}$ required of the signed tiles.
@@ -217,7 +247,7 @@ For $F=2$ and $c=1$ each point lies in one tile, so the tiling is a single signi
 The repository contains the three base blocks (\texttt{data/starters.txt}), both exported graphs and their complements (\texttt{graphs/}, vertex $8p+x$), and the samples and catalogue in \texttt{family/}: $32$ sign variants, members with $50$ automorphisms and with clique numbers $8$ and $9$, and all $14{,}656$ translation-invariant classes (\texttt{family/catalogue.tsv}, with \texttt{family/export.py} to build any of them).
 
 \begin{sloppypar}
-The script \texttt{verify\_all.sh} rebuilds both graphs and compares them byte for byte with the files (\texttt{seed/}), and rebuilds them again from the written description only (\texttt{audit/independent\_rebuild.py}). It checks $A^2=96I-4A+72J$ and the complement on all pairs. It runs the lifting lemma on random choices with random signs, with the controls $\srg(28,12,6,4)$ from the Fano plane ($F=4$) and $\srg(144,66,30,30)$ from $K_{12}$ with a Paley Hadamard matrix of order $12$ (\texttt{lift/general\_lift.py}). It also reruns the fiber-recovery check and the clique enumeration. The census, the exact count and the full catalogue audit are in \texttt{family/} with their outputs.
+The script \texttt{verify\_all.sh} rebuilds both graphs and compares them byte for byte with the files (\texttt{seed/}), and rebuilds them again from the written description only (\texttt{audit/independent\_rebuild.py}). It checks $A^2=96I-4A+72J$ and the complement on all pairs. It runs the lifting lemma on random choices with random signs, with the controls $\srg(28,12,6,4)$ from the Fano plane ($F=4$) and $\srg(144,66,30,30)$ from $K_{12}$ with a Paley Hadamard matrix of order $12$ (\texttt{lift/general\_lift.py}). It also reruns the fiber-recovery check and the clique enumeration. The census, the exact count and the full catalogue audit are in \texttt{family/} with their outputs. The folder \texttt{covers/} contains the census of the twelve covers, the $48$ exported graphs of degrees $168$ and $171$ (a translation-invariant pair and a most symmetric pair per cover), the per-cover counts, and our independent check \texttt{covers/independent\_covers.py}, which rebuilds all twelve covers from their base blocks, classifies them with nauty, and tests random members at both degrees, including the recovery of the $700$ planes.
 \end{sloppypar}
 
 \begin{figure}[t]
@@ -240,6 +270,7 @@ AI assistants were used for the search and verification programs and for a first
 \bibitem{FDF02} D.~G.~Fon-Der-Flaass, New prolific constructions of strongly regular graphs, \emph{Adv. Geom.} 2 (2002) 301--306.
 \bibitem{HS60} A.~J.~Hoffman and R.~R.~Singleton, On Moore graphs with diameters 2 and 3, \emph{IBM J. Res. Dev.} 4 (1960) 497--504.
 \bibitem{Kov26} A.~Kova\v{l}, search ledger for open strongly regular graph parameters (hyperplane-slab template, row $(400,168,68,72)$), unpublished, 2026.
+\bibitem{KovMO} A.~Kova\v{l}, Strongly regular graphs on 306, 400, 576, 784 and 1296 vertices from multi-orbit coset fusion and Bush-type Hadamard matrices, preprint, 2026, \url{https://doi.org/10.5281/zenodo.23296158}.
 \bibitem{LTS89} C.~W.~H.~Lam, L.~Thiel and S.~Swiercz, The nonexistence of finite projective planes of order 10, \emph{Canad. J. Math.} 41 (1989) 1117--1123.
 \bibitem{Muz07} M.~Muzychuk, A generalization of Wallis--Fon-Der-Flaass construction of strongly regular graphs, \emph{J. Algebraic Combin.} 25 (2007) 169--187.
 \bibitem{P496} D.~Plummer, Strongly regular graphs with parameters $(496,231,102,112)$, note, 2026.
