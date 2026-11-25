@@ -1,0 +1,34 @@
+% Figure 2: logical structure. Solid: proved in the text. Dashed: rests on a computation.
+\begin{tikzpicture}[
+  font=\small,
+  box/.style={draw, rounded corners=2pt, align=center, text width=#1, inner sep=4pt, fill=white},
+  box/.default=4.0cm,
+  comp/.style={box=#1, dashed, fill=gray!8},
+  comp/.default=3.4cm,
+  arr/.style={-{Stealth[length=2.2mm]}, thick}]
+% main column
+\node[box] (lem) at (0,0) {Lemma 2.1: lifting lemma for signed tiles with two eigenvalues};
+\node[box] (til) at (0,-1.7) {Prop.~3.1: $35$ signed copies of $T(5)$ tile the complement of the Hoffman--Singleton graph};
+\node[box, fill=pA!12] (thm) at (0,-3.6) {\textbf{Theorem 3.2}: $\srg(400,168,68,72)$};
+\node[comp=4.0cm] (rec) at (0,-5.3) {Prop.~4.1: the fibers and the tiles are determined by the graph (finite check)};
+\node[box, fill=pA!12] (cnt) at (0,-7.2) {\textbf{Theorem 4.2}: exactly $N\approx6.71\cdot10^{121}$ classes};
+% left column
+\node[box=3.4cm] (hs) at (-4.6,-1.7) {Hoffman--Singleton graph from two copies of $\F_5^2$};
+\node[comp] (cov) at (-4.6,-5.3) {cover group $C_5\times D_{10}$ of order $50$};
+% right column
+\node[comp] (ctl) at (4.6,0) {controls: $(28,12,6,4)$, $(144,66,30,30)$, Clebsch};
+\node[comp] (ti) at (4.6,-5.3) {$14{,}656$ translation-invariant classes (nauty)};
+\node[comp] (clq) at (4.6,-3.6) {clique number $\le10$; no $pg(14,11,6)$};
+\node[box=3.4cm] (oth) at (4.6,-1.7) {Section 5: targets up to $1300$ vertices};
+% arrows
+\draw[arr] (lem) -- (til); \draw[arr] (til) -- (thm); \draw[arr] (thm) -- (rec); \draw[arr] (rec) -- (cnt);
+\draw[arr] (hs) -- (til);
+\draw[arr, dashed] (lem) -- (ctl);
+\draw[arr] (lem.south east) -- (oth.north west);
+\draw[arr, dashed] (cov) -- (cnt.north west);
+\draw[arr, dashed] (thm.south east) -- (ti.north west);
+\draw[arr, dashed] (thm) -- (clq);
+% legend
+\node[box=2.0cm, inner sep=3pt, font=\scriptsize] at (-1.3,-8.6) {proved in the text};
+\node[comp=3.0cm, inner sep=3pt, font=\scriptsize] at (1.6,-8.6) {rests on a computation};
+\end{tikzpicture}

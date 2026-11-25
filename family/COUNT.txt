@@ -1,0 +1,124 @@
+Exact count of the graphs obtained from this cover
+24 November 2026
+
+Allow an arbitrary order and sign of the seven characters at each of
+the 50 fibers of the three-starter construction. The exact number of
+unlabeled graphs is
+
+ [ 2^215 * 15^50
+   + 5  * 2^121 * 15^20 * 61^2
+   + 8  * 2^39  * 15^10
+   + 16 * 2^43  * 15^10
+   + 20 * 2^25  * 15^4 ] / 50
+
+ = 67149381404684988745612401176186472091382586932131677973141398197905438591233930267112149509803523803769257486605877248000.
+
+The count is for a single unsigned tile decomposition. The proof in
+README.txt shows that the graph determines that decomposition. This makes
+the following enumeration an isomorphism count for ordinary graphs.
+
+Local choices and their equivalences
+
+To a fiber associate its eight binary sign words of length seven, in
+the order of its incident tiles. These eight words form an affine coset
+of a binary [7,3,4] simplex code. Permuting the character labels gives
+30 such linear codes on the labeled set of seven ports. Each linear
+code has 16 affine cosets. Thus there are 480 local states after
+forgetting the order of the eight vertices inside a fiber.
+
+The residual ambiguity over the identity map on the base is the group
+K of 2^35 independent tile reversals. A reversal changes the signs at
+all ten points of its tile. It preserves the product at each edge. To
+see that these are all the equivalences, use the seven intrinsic splits
+at each fiber as in README.txt. A relabeling identifying two local
+sign-word sets can reverse whole ports. To preserve a block, the
+reversal bits at its ends must agree. Each tile is connected, hence the
+bits must be constant on that tile. Conversely these operations always
+give isomorphic graphs.
+
+K acts freely on the tuples of local states, including ones with
+arbitrary character assignments. For a set of reversed tiles to fix
+a fiber, their incidence vector at the fiber must belong to its linear
+simplex code. Its weight must be zero or four. Form the 50 by 35
+binary point-tile incidence matrix. Any possible reversal set is in
+its kernel, since both weights are even. Its rank is 29. Among all
+64 kernel vectors only zero meets every point zero or four times.
+full_count.py checks these 64 vectors directly. Consequently the
+space Y of classes over the identity base map has size 480^50 / 2^35.
+Every graph automorphism acts faithfully on the base. Thus its full
+group is its stabilizer in the 50-element cover group C5 x D10.
+
+Counting fixed classes
+
+The cover group acts on Y. For a cover automorphism g, a lift to the
+480-state description permutes the seven ports at each point and adds
+sign changes. On a tile those signs can be obtained by solving for
+the switches that take its transported signed edge matrix to the
+reference matrix of the target tile. Such switches exist because the
+two local orientations of each K5 edge differ at most by reversal.
+All lifts differ by tile reversals. Freeness gives
+
+ |Fix_Y(g)| = (1/2^35) sum over its 2^35 lifts h of |Fix(h)|.
+
+Indeed, over each fixed Y-class there are exactly 2^35 representatives,
+each fixed by exactly one lift. For other classes there are none.
+
+Here are the five contributions. The two groups of order-five elements
+distinguish the two short-tile stabilizer directions from the other four
+directions in the translation plane.
+
+   order of g    number     |Fix_Y(g)|
+       1            1       2^215 * 15^50
+       2            5       2^121 * 15^20 * 61^2
+       5            8       2^39 * 15^10
+       5           16       2^43 * 15^10
+      10           20       2^25 * 15^4
+
+full_count.py evaluates that sum without listing all individual lifts.
+Along an orbit of tiles, conjugation by tile reversals moves all sign
+changes to one chosen representative, leaving only their parity.
+If there are c tile orbits, each parity vector represents 2^(35-c)
+lifts. A lift fixing a tuple has h^d=1 for d the order of g, since
+h^d is a tile reversal and the action is free. This determines the
+required parity on an orbit of length L whenever d/L is odd. When
+d/L is even the d-th power of the reference lift on that orbit must
+already be trivial. The remaining parity is free. For an admissible
+lift, one local state can be selected per orbit of points, subject
+to its return map fixing that state. The program tests all 480 states
+under each distinct signed permutation of seven ports. Multiplying
+around the point orbits gives |Fix(h)|. Averaging the table above
+over the cover group yields the displayed result.
+
+Independent count by subgroups
+
+stabilizers.py generates all 20 subgroups of the cover group. For each
+it first takes its odd-order translation subgroup O. A Y-class fixed
+by O has an O-invariant representative. In detail, the local linear
+codes must repeat on O-orbits. Write the sign choices modulo these
+codes as an affine binary space with the induced permutations of O.
+The sum of the O-translates of one sign choice differs from it by
+tile reversals, since |O| is odd. This gives the invariant representative.
+Two invariant representatives in a single class differ by an invariant
+tile reversal, by freeness. Thus on the quotient one can select one
+of 480 states per point orbit and divide by two per tile orbit.
+
+If the subgroup contains an involution, it acts on these quotient
+orbits. The second program derives an involutive lift geometrically:
+at a flag remember the four-edge star containing the head of the
+corresponding oriented K5 edge. Transporting that star determines
+whether its orientation is reversed. Each transposed pair of point
+orbits contributes 480 choices. At a fixed orbit the checker solves
+(I+P)z=s modulo each invariant simplex code for its port permutation
+P and signs s. This gives the same local counts by linear algebra.
+Only the fixed tile orbits require a sum over the choice of a reversal.
+The two flips on a transposed pair must agree. This computes fixed
+classes for every subgroup, including the noncyclic ones.
+
+Subtracting exact stabilizers of larger subgroups and dividing by orbit
+size gives the distribution in stabilizers.out. Its total agrees with
+the element-wise calculation. Just 657876422586110467860534224299019607046352151571854721293271488
+of the unlabeled graphs have a nontrivial automorphism, a fraction
+of approximately 9.7972 x 10^-60. The only possible full group orders
+are 1, 2, 5, 10, 25 and 50, and all six occur. The groups of orders
+25 and 50 have independently been computed on every ordinary graph in
+the translation-invariant catalogue.

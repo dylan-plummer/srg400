@@ -1,0 +1,34 @@
+% Figure 1: (a) the oriented K5 behind the signed tile, (b) the block between two fibers.
+\begin{tikzpicture}[font=\small,
+  sym/.style={circle, draw, inner sep=1.5pt, minimum size=5mm, fill=white},
+  v/.style={circle, draw, inner sep=0pt, minimum size=2.6mm},
+  vp/.style={v, fill=pA!45},
+  vm/.style={v, fill=pB!55},
+  arc/.style={-{Stealth[length=2mm]}, thick, gray!60!black}]
+% ---- (a) K5 oriented by i -> j iff j - i = 1, 2 mod 5
+\begin{scope}
+  \foreach \i in {0,...,4} \coordinate (k\i) at (90-72*\i:1.45);
+  \foreach \i in {0,...,4} {
+    \pgfmathtruncatemacro{\j}{mod(\i+1,5)}\pgfmathtruncatemacro{\l}{mod(\i+2,5)}
+    \draw[arc, shorten >=2.6mm, shorten <=2.6mm] (k\i) -- (k\j);
+    \draw[arc, shorten >=2.6mm, shorten <=2.6mm] (k\i) -- (k\l);}
+  \foreach \i in {0,...,4} \node[sym] at (k\i) {\i};
+  \node[align=center] at (0,-2.15) {(a) $K_5$ oriented by $i\to j$ if $j-i\equiv1,2\pmod5$};
+\end{scope}
+% ---- (b) block between fibers p and q
+\begin{scope}[xshift=5.4cm, yshift=-0.2cm]
+  \node at (0,1.55) {fiber $p$};
+  \node at (3,1.55) {fiber $q$};
+  \foreach \k in {0,...,3} \node[vp] (a\k) at (0,1.05-0.3*\k) {};
+  \foreach \k in {0,...,3} \node[vm] (b\k) at (0,-0.35-0.3*\k) {};
+  \foreach \k in {0,...,3} \node[vp] (c\k) at (3,1.05-0.3*\k) {};
+  \foreach \k in {0,...,3} \node[vm] (d\k) at (3,-0.35-0.3*\k) {};
+  \draw[pA, line width=3pt, opacity=0.35] (0.25,0.6) -- (2.75,0.6);
+  \draw[pB, line width=3pt, opacity=0.45] (0.25,-0.8) -- (2.75,-0.8);
+  \node[font=\scriptsize, anchor=east] at (-0.25,0.6) {$\chi_c=+1$};
+  \node[font=\scriptsize, anchor=east] at (-0.25,-0.8) {$\chi_c=-1$};
+  \node[font=\scriptsize, anchor=west] at (3.25,0.6) {$\chi_d=+1$};
+  \node[font=\scriptsize, anchor=west] at (3.25,-0.8) {$\chi_d=-1$};
+  \node[align=center, font=\small] at (1.5,-1.95) {(b) the case $X(p,q)=+1$};
+\end{scope}
+\end{tikzpicture}

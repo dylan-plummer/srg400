@@ -1,0 +1,151 @@
+Transferring the 400 construction to other parameters
+24 November 2026
+
+A direct extension using any one signed Johnson graph as the tile
+reaches only the 400 example among the rows marked open in the local
+Brouwer table through order 1,300. Mixing two types of tile gives a
+specific route to two open rows on 616 vertices. We have suitable
+signed matrices and individually valid translation orbits. The joint
+edge decomposition is unresolved.
+
+1. Signed Johnson graphs from the boundary of a simplex
+
+Index the columns of D by the j-subsets of an m-set and its rows by
+the (j-1)-subsets. Use the oriented simplicial boundary matrix. Then
+
+                          X = jI - D^T D
+
+has entries 0,+1,-1, diagonal zero and support the Johnson graph
+J(m,j). Its degree is j(m-j). On exterior powers, D is contraction
+by the all-one vector and its adjoint is exterior multiplication by
+that vector. Their anticommutator is mI and their squares are zero.
+Thus (D^T D)^2 = m D^T D and the eigenvalues of X are j and j-m.
+Either X or -X can be used. The original oriented K5 incidence
+construction is the case (m,j)=(5,2).
+
+Take h vertices per fiber and use the h-1 balanced columns of a
+normalized real Hadamard matrix. Each used base pair has a half-block.
+All unused pairs have zero blocks. The fibers are either all empty or
+all complete, indicated by c=0 or 1. Taking the complement also covers
+the case where every unused pair has a full block. Let a=h/2, let t
+be the number of base points and r>s the desired restricted eigenvalues.
+
+On tile contrasts the action is -cI plus or minus aX. With
+u=(r+c)/a and v=-(s+c)/a, both positive integers, one must have
+m=u+v, tile size binomial(u+v,u), and tile degree uv. Every base point
+lies in h-1 tiles. Thus the base degree b and graph degree satisfy
+
+                 b=(h-1)uv,       k=c(h-1)+ab.
+
+The tile size divides t(h-1) and cannot exceed t. The quotient on the
+fiber constants is c(h-1)I+aB, where B is the base graph. If B is
+noncomplete its required restricted eigenvalues p,q determine the
+base parameters by mu_B=b+pq and lambda_B=mu_B+p+q. transfers.py
+checks all possible real Hadamard orders (2 or a multiple of 4) as
+an arithmetic superset, both signs, both interiors, and both row
+orientations in current_table.csv. These are restrictions on this
+one-tile-type construction. Scaled full/empty mixtures, mixed tile
+types and other local frames have a different arithmetic.
+
+The candidates left by the divisibility checks are in transfers.out.
+Their fates can be decided without a packing search.
+
+* At 288 and 1200 one needs a 2-(q^2,q,1) design on the complete
+  base graph, with q=6 and q=10 respectively. Such a design is an
+  affine plane and completes to a projective plane. Order 6 fails the
+  Bruck–Ryser condition and order 10 is excluded by Lam, Thiel and
+  Swiercz. https://doi.org/10.4153/CJM-1949-009-2
+  https://www.cecm.sfu.ca/organics/papers/lam/
+* At 456 the required base has complement (57,14,1,4), excluded by
+  Wilbrink and Brouwer. At 624 the required base complement would have
+  lambda=-4. https://aeb.win.tue.nl/graphs/srg/srgtab51-100.html
+* At 736 the complete base requires 46 blocks of size 14 on 92 points,
+  covering every pair once. Fisher's inequality requires at least 92
+  blocks. At 960 the base is the complement of the unique triangular
+  graph T(16). A clique is a matching on 16 objects, of size at most 8.
+  A tile needs 14. https://aeb.win.tue.nl/graphs/srg/srgtab101-150.html
+* At 400 the three original starters give the required cover.
+
+2. A mixed construction for (616,287,126,140)
+
+Use the complete 11-partite graph B with seven points per part. Its
+degree is 70 and its restricted eigenvalues are 0 and -7. Replace each
+point by a complete K8, using the seven binary characters as before.
+The quotient action 7I+4B has eigenvalues 287, 7, -21. On a signed
+tile the action is -I+4X, so the required signed eigenvalues are
+2 and -5. Both tile types below are 10-regular.
+
+For the first tile use the 21 edges of K7, with X=2I-D^T D from its
+oriented incidence matrix. For the second, take the 28 doubled E8
+roots R in roots616.txt. The certificate is R^T R=28I and all diagonal
+entries of RR^T are 8. The off-diagonal entries are in {0,+4,-4}.
+Thus X=2I-RR^T/4 has the required spectrum. The roots R/2 generate
+all of E8, as witnessed by the Hermite normal form of R^T, of
+determinant 256. The coordinates were found by selecting root-line
+orbits under (012)(345) and imposing the eight-dimensional frame
+operator. frames616.py checks the submitted coordinates directly.
+
+Represent base points by (g,y) with g in Z/11 indexing the parts and y
+in {0,...,6}. Translate the first coordinate. One orbit of each tile
+uses 11(21+28)=539 flags, precisely 77 x 7. The two starters contain
+105+140=245 edges. To complete the construction, assign first and
+second coordinates to their vertices so their base edges represent
+all 245 translation classes exactly once. This entails injectivity
+within each tile, and distinct parts at the endpoints of every tile
+edge. Vertices in different tiles may share a base label.
+
+For colors y<z record the nonzero directed first-coordinate difference
+from y to z. For equal colors record the nonzero difference up to sign.
+Each of the 21 different-color pairs needs ten differences and each of
+the seven equal-color pairs needs five. These requirements are both
+necessary and sufficient for the two C11 orbits to give the whole
+decomposition. The seven incidences at each point then follow from
+degree 70 and local tile degree ten.
+
+colors616.txt gives a coloring of the 49 starter entries satisfying
+all 28 of these quotas. The first 21 entries follow lexicographic order
+on the edges of K7, and the last 28 follow the order of roots616.txt.
+positions616.txt gives first coordinates for which each tile orbit is
+individually collision-free, covering 1,155 and 1,540 base edges.
+Even after the best nonzero scalar rescaling of one of these particular
+starters, there are 42 overlapping difference classes. A joint solve
+with both sets of positions free and these colors fixed reached its
+time limit. This gives neither a full cover nor an infeasibility result.
+
+3. Why the same cover would also give (616,300,152,140)
+
+For the supplied coloring the K7 triangle on nodes 0,1,3 uses edges
+01,03,13 with distinct colors 5,0,6. The oriented three-edge cycle
+with coefficients +1,-1,+1 is in the kernel of D. Thus its signed
+three-term vector has X-eigenvalue 2. This triangle condition also
+suffices for any other valid C11 coloring with a rainbow K7 triangle.
+
+Suppose the two starter orbits give the full cover. Take the cycle
+vector in each translate of the triangular tile and realize it in the
+corresponding character spaces of the graph. Use the base signing
+2I-D^T D, transported throughout the orbit. The eleven translates use
+33 different base points, because the three colors are distinct.
+Each part contains exactly three such points. On those fibers the
+resulting function takes only values +1 and -1 and has mean zero.
+On the remaining four fibers in each part, put the constant +1 on
+two fibers and -1 on two others. This part of the function lies in
+the zero eigenspace of B. The sum is a sign vector w on all 616
+vertices. It has A-eigenvalue 7 on both the contrast and quotient
+spaces and has coordinate sum zero.
+
+The Seidel matrix S=J-I-2A has eigenvalues -15 and 41, with S w=-15w.
+Switch by diag(w). The switched Seidel matrix has constant row sum
+-15. Its graph has degree 315, restricted eigenvalues 7,-21, and
+parameters (616,315,154,168). Complementation gives (616,300,152,140).
+Both this row and the degree-287 row are marked open in Brouwer's table.
+https://aeb.win.tue.nl/graphs/srg/srgtab601-650.html
+
+Reproduce the positive local certificates and the bounded joint test
+with the following commands from this directory.
+
+    python transfers.py
+    python frames616.py
+    python transfer616.py
+    python join616.py --seconds 25
+
+The first three require no solver. The last uses OR-Tools CP-SAT.

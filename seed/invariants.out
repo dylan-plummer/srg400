@@ -1,0 +1,8 @@
+srg_400_168_68_72.g6 group order from nauty and bliss 25 vertex orbits 16
+orbit size distribution {25: 16}
+four-cliques 4958400 edge count range 856 916
+largest clique through a representative, counted by orbits {9: 1, 10: 15} clique number 10
+srg_400_168_68_72_swap.g6 group order from nauty and bliss 1 vertex orbits 400
+orbit size distribution {1: 400}
+four-cliques 4958208 edge count range 854 918
+largest clique through a representative, counted by orbits {8: 1, 9: 32, 10: 367} clique number 10

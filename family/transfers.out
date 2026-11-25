@@ -1,0 +1,10 @@
+(288, 140, 76, 60) h 8 internal clique False J 6 1 tiles 42 complete K36
+(288, 147, 66, 84) h 8 internal clique True J 6 1 tiles 42 complete K36
+(400, 168, 68, 72) h 8 internal clique False J 5 2 tiles 35 base (50, 42, 35, 36), table status !
+(456, 175, 78, 60) h 8 internal clique True J 7 1 tiles 57 base (57, 42, 31, 30), table status -
+(624, 280, 132, 120) h 8 internal clique False J 7 2 tiles 26 infeasible base pair counts
+(736, 364, 204, 156) h 8 internal clique False J 14 1 tiles 46 complete K92
+(736, 371, 162, 212) h 8 internal clique True J 14 1 tiles 46 complete K92
+(960, 364, 108, 156) h 8 internal clique False J 14 1 tiles 60 base (120, 91, 66, 78), table status !
+(1200, 594, 318, 270) h 12 internal clique False J 10 1 tiles 110 complete K100
+(1200, 605, 280, 330) h 12 internal clique True J 10 1 tiles 110 complete K100

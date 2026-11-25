@@ -1,0 +1,13 @@
+srg_400_168_68_72.g6 edges 33600 unordered pairs [((0, 72), 46200), ((1, 68), 33600)]
+sha256 2a4b2378951f7c764780b2e040f236b6ebc360498989d3372b091b76fb7d50a6
+srg_400_231_134_132.g6 edges 46200 unordered pairs [((0, 132), 33600), ((1, 134), 46200)]
+sha256 c98e5fd9d057cbab5883e3a14a69481fbc002c16045dcef6360e30800810bf7c
+induced Hoffman-Singleton edge counts on the three starters [5, 15, 3]
+incidence-matrix reconstruction agrees with the export in all 160000 entries
+srg_400_168_68_72_swap.g6 edges 33600 unordered pairs [((0, 72), 46200), ((1, 68), 33600)]
+sha256 e3ff5f6144d200df762cf09eac91b7c93cd9f968b1d020b9b824f67c382f3813
+srg_400_231_134_132_swap.g6 edges 46200 unordered pairs [((0, 132), 33600), ((1, 134), 46200)]
+sha256 ec73489057cb2b001f0c037113bff7710b33eab6e89e6dd43bbc07256335452a
+induced Hoffman-Singleton edge counts on the three starters [5, 15, 3]
+incidence-matrix reconstruction agrees with the export in all 160000 entries
+all checks passed

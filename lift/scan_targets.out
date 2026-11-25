@@ -1,0 +1,43 @@
+(162, 21, 0, 3)  <- base (81, 20, 1, 6) [exists], fibres complete of size 2, tiles: signed spectrum {4,-5}, degree 20, 1 per point
+(196, 75, 26, 30)  <- base (49, 36, 25, 30) [exists], fibres complete of size 4, tiles: signed spectrum {3,-4}, degree 12, 3 per point
+(210, 33, 0, 6)  <- base (105, 32, 4, 12) [exists], fibres complete of size 2, tiles: signed spectrum {4,-8}, degree 32, 1 per point
+(288, 123, 42, 60)  <- base (72, 60, 48, 60) [K_6x12], fibres complete of size 4, tiles: signed spectrum {2,-10}, degree 20, 3 per point
+(340, 108, 30, 36)  <- base (85, 54, 33, 36) [exists], fibres empty of size 4, tiles: signed spectrum {3,-6}, degree 18, 3 per point
+(392, 46, 0, 6)  <- base (196, 45, 4, 12) [open], fibres complete of size 2, tiles: signed spectrum {5,-9}, degree 45, 1 per point
+(400, 126, 34, 42)  <- base (100, 63, 38, 42) [exists], fibres empty of size 4, tiles: signed spectrum {3,-7}, degree 21, 3 per point
+(400, 147, 50, 56)  <- base (100, 72, 50, 56) [exists], fibres complete of size 4, tiles: signed spectrum {4,-6}, degree 24, 3 per point
+(400, 168, 68, 72)  <- base (50, 42, 35, 36) [exists], fibres empty of size 8, tiles: signed spectrum {2,-3}, degree 6, 7 per point
+(448, 150, 50, 50)  <- base (112, 75, 50, 50) [does not exist], fibres empty of size 4, tiles: signed spectrum {5,-5}, degree 25, 3 per point
+(448, 162, 66, 54)  <- base (112, 81, 60, 54) [exists], fibres empty of size 4, tiles: signed spectrum {9,-3}, degree 27, 3 per point
+(456, 175, 78, 60)  <- base (57, 42, 31, 30) [does not exist], fibres complete of size 8, tiles: signed spectrum {6,-1}, degree 6, 7 per point
+(484, 147, 50, 42)  <- base (121, 72, 43, 42) [open], fibres complete of size 4, tiles: signed spectrum {8,-3}, degree 24, 3 per point
+(484, 168, 62, 56)  <- base (121, 84, 59, 56) [open], fibres empty of size 4, tiles: signed spectrum {7,-4}, degree 28, 3 per point
+(552, 76, 0, 12)  <- base (276, 75, 10, 24) [open], fibres complete of size 2, tiles: signed spectrum {5,-15}, degree 75, 1 per point
+(612, 195, 66, 60)  <- base (153, 96, 60, 60) [open], fibres complete of size 4, tiles: signed spectrum {8,-4}, degree 32, 3 per point
+(616, 287, 126, 140)  <- base (77, 70, 63, 70) [K_11x7], fibres complete of size 8, tiles: signed spectrum {2,-5}, degree 10, 7 per point
+(640, 210, 66, 70)  <- base (160, 105, 68, 70) [exists], fibres empty of size 4, tiles: signed spectrum {5,-7}, degree 35, 3 per point
+(640, 213, 72, 70)  <- base (160, 105, 68, 70) [exists], fibres complete of size 4, tiles: signed spectrum {7,-5}, degree 35, 3 per point
+(650, 55, 0, 5)  <- base (325, 54, 3, 10) [open], fibres complete of size 2, tiles: signed spectrum {6,-9}, degree 54, 1 per point
+(676, 216, 62, 72)  <- base (169, 108, 67, 72) [exists], fibres empty of size 4, tiles: signed spectrum {4,-9}, degree 36, 3 per point
+(676, 243, 82, 90)  <- base (169, 120, 83, 90) [exists], fibres complete of size 4, tiles: signed spectrum {5,-8}, degree 40, 3 per point
+(680, 280, 108, 120)  <- base (85, 70, 57, 60) [does not exist], fibres empty of size 8, tiles: signed spectrum {2,-5}, degree 10, 7 per point
+(700, 216, 54, 72)  <- base (175, 108, 63, 72) [exists], fibres empty of size 4, tiles: signed spectrum {3,-12}, degree 36, 3 per point
+(704, 37, 0, 2)  <- base (352, 36, 0, 4) [open], fibres complete of size 2, tiles: signed spectrum {6,-6}, degree 36, 1 per point
+(736, 270, 114, 90)  <- base (184, 135, 102, 90) [does not exist], fibres empty of size 4, tiles: signed spectrum {15,-3}, degree 45, 3 per point
+(784, 116, 0, 20)  <- base (392, 115, 18, 40) [open], fibres complete of size 2, tiles: signed spectrum {5,-23}, degree 115, 1 per point
+(784, 228, 42, 76)  <- base (196, 114, 59, 76) [does not exist], fibres empty of size 4, tiles: signed spectrum {2,-19}, degree 38, 3 per point
+(792, 336, 140, 144)  <- base (99, 84, 71, 72) [open], fibres empty of size 8, tiles: signed spectrum {3,-4}, degree 12, 7 per point
+(800, 85, 0, 10)  <- base (400, 84, 8, 20) [open], fibres complete of size 2, tiles: signed spectrum {6,-14}, degree 84, 1 per point
+(868, 300, 110, 100)  <- base (217, 150, 105, 100) [exists], fibres empty of size 4, tiles: signed spectrum {10,-5}, degree 50, 3 per point
+(880, 270, 66, 90)  <- base (220, 135, 78, 90) [exists], fibres empty of size 4, tiles: signed spectrum {3,-15}, degree 45, 3 per point
+(880, 294, 98, 98)  <- base (220, 147, 98, 98) [open], fibres empty of size 4, tiles: signed spectrum {7,-7}, degree 49, 3 per point
+(928, 300, 90, 100)  <- base (232, 150, 95, 100) [open], fibres empty of size 4, tiles: signed spectrum {5,-10}, degree 50, 3 per point
+(960, 364, 108, 156)  <- base (120, 91, 66, 78) [exists], fibres empty of size 8, tiles: signed spectrum {1,-13}, degree 13, 7 per point
+(976, 273, 92, 70)  <- base (244, 135, 78, 70) [open], fibres complete of size 4, tiles: signed spectrum {15,-3}, degree 45, 3 per point
+(1000, 336, 114, 112)  <- base (250, 168, 113, 112) [exists], fibres empty of size 4, tiles: signed spectrum {8,-7}, degree 56, 3 per point
+(1024, 378, 162, 126)  <- base (256, 189, 144, 126) [does not exist], fibres empty of size 4, tiles: signed spectrum {21,-3}, degree 63, 3 per point
+(1080, 78, 0, 6)  <- base (540, 77, 4, 12) [open], fibres complete of size 2, tiles: signed spectrum {7,-11}, degree 77, 1 per point
+(1156, 363, 122, 110)  <- base (289, 180, 113, 110) [open], fibres complete of size 4, tiles: signed spectrum {12,-5}, degree 60, 3 per point
+(1156, 396, 142, 132)  <- base (289, 198, 137, 132) [does not exist], fibres empty of size 4, tiles: signed spectrum {11,-6}, degree 66, 3 per point
+(1190, 145, 0, 20)  <- base (595, 144, 18, 40) [open], fibres complete of size 2, tiles: signed spectrum {6,-24}, degree 144, 1 per point
+(1276, 50, 0, 2)  <- base (638, 49, 0, 4) [open], fibres complete of size 2, tiles: signed spectrum {7,-7}, degree 49, 1 per point

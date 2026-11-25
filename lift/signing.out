@@ -1,0 +1,7 @@
+# CP-SAT runs, 24 Nov 2026, 2 workers
+base (np.int64(20), np.int64(1), np.int64(6), np.int64(2), np.int64(-7))
+bh81 tile spectrum (np.int64(4), np.int64(-5)) UNKNOWN 1800s
+base (np.int64(32), np.int64(4), np.int64(12), np.int64(2), np.int64(-10))
+pg24flags.g6 tile spectrum (np.int64(4), np.int64(-8)) INFEASIBLE 656s
+# translation-invariant signings of Brouwer-Haemers (2^10): 0 solutions
+# control: K4,4 spectrum {2,-2} OPTIMAL, lift = srg(16,5,0,2) (Clebsch)

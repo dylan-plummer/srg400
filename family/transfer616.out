@@ -1,0 +1,4 @@
+signed tiles [105, 140] edges; 7 diagonal colour pairs occur 5 times, 21 off-diagonal pairs 10 times
+switching triangle [0, 2, 7] has distinct inner labels 5, 0, 6
+valid individual translation orbits with 1155 and 1540 base edges
+smallest overlap in difference classes after rescaling one starter 42 of 245
